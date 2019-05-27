@@ -61,9 +61,15 @@ export const presets = {
   molasses: { tension: 280, friction: 120 }
 }
 
+const transformProperties = ['translateY', 'translateX', 'scale']
+
 export const generateKeyframes = (springs, time = 1) => {
-  const functions = springs.map(({ tension, friction }) =>
-    spring(tension, friction)
+  const otherSprings = springs.filter(
+    s => !transformProperties.includes(s.property)
+  )
+
+  const transformSprings = springs.filter(s =>
+    transformProperties.includes(s.property)
   )
 
   let keyframesString = ''
@@ -71,9 +77,23 @@ export const generateKeyframes = (springs, time = 1) => {
     keyframesString = keyframesString + `${i}% {`
     keyframesString = keyframesString + '\n'
 
-    for (let j = 0; j < springs.length; j++) {
-      const f = functions[j]
-      const { property, from, to, unit } = springs[j]
+    if (transformSprings.length > 0) {
+      keyframesString = keyframesString + ` transform: `
+      for (let j = 0; j < transformSprings.length; j++) {
+        const { property, from, to, unit, tension, friction } = springs[j]
+        const f = spring(tension, friction)
+
+        keyframesString =
+          keyframesString +
+          `${property}(${from + (to - from) * f((i * time) / 100)}${unit}) `
+      }
+
+      keyframesString = keyframesString + ';\n'
+    }
+
+    for (let j = 0; j < otherSprings.length; j++) {
+      const { property, from, to, unit, tension, friction } = springs[j]
+      const f = spring(tension, friction)
 
       keyframesString =
         keyframesString +
