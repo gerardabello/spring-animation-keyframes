@@ -80,7 +80,14 @@ export const generateKeyframes = (springs, time = 1) => {
     if (transformSprings.length > 0) {
       keyframesString = keyframesString + ` transform: `
       for (let j = 0; j < transformSprings.length; j++) {
-        const { property, from, to, unit, tension, friction } = springs[j]
+        const {
+          property,
+          from,
+          to,
+          unit,
+          tension,
+          friction
+        } = transformSprings[j]
         const f = spring(tension, friction)
 
         keyframesString =
@@ -92,7 +99,7 @@ export const generateKeyframes = (springs, time = 1) => {
     }
 
     for (let j = 0; j < otherSprings.length; j++) {
-      const { property, from, to, unit, tension, friction } = springs[j]
+      const { property, from, to, unit, tension, friction } = otherSprings[j]
       const f = spring(tension, friction)
 
       keyframesString =
