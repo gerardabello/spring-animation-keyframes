@@ -1,0 +1,35 @@
+{
+  "name": "spring-animation-keyframes",
+  "browserslist": [
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 2 edge versions",
+    "last 2 safari versions",
+    "last 2 and_chr versions",
+    "last 2 ios_saf versions",
+    "> 1%",
+    "not dead",
+    "not ie 11"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "8.0.2",
+    "browserslist": "^4.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-gerard": "^0.3.0",
+    "prop-types": "^15.7.2",
+    "webpack": "4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "start": "webpack-dev-server --mode development",
+    "build": "npm run clean && webpack --mode production",
+    "lint": "eslint --ext .js,.jsx . --fix"
+  },
+  "license": "MIT"
+}

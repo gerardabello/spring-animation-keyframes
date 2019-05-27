@@ -1,0 +1,18 @@
+# NPM packages
+node_modules
+
+stats.json
+
+# General ignored folder
+ignore
+
+# Webpack build directory
+build
+dist
+
+# Packaged app
+bin
+
+*.log
+
+.DS_Store

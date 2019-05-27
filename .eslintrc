@@ -1,0 +1,6 @@
+{
+  "extends": ["eslint-config-gerard"],
+  "rules": {
+      "react/display-name": "warn"
+  }
+}
