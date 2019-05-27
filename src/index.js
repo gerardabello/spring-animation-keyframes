@@ -69,6 +69,7 @@ export const generateKeyframes = (springs, time = 1) => {
   let keyframesString = ''
   for (let i = 0; i <= 100; i++) {
     keyframesString = keyframesString + `${i}% {`
+    keyframesString = keyframesString + '\n'
 
     for (let j = 0; j < springs.length; j++) {
       const f = functions[j]
@@ -76,9 +77,11 @@ export const generateKeyframes = (springs, time = 1) => {
 
       keyframesString =
         keyframesString + `${property}: ${from + to * f((i * time) / 100)}px;`
+      keyframesString = keyframesString + '\n'
     }
 
-    keyframesString = keyframesString + `} `
+    keyframesString = keyframesString + `}`
+    keyframesString = keyframesString + '\n'
   }
 
   return keyframesString
