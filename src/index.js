@@ -82,6 +82,7 @@ export const generateKeyframes = (springs, time = 1) => {
 
     keyframesString = keyframesString + `}`
     keyframesString = keyframesString + '\n'
+    keyframesString = keyframesString + '\n'
   }
 
   return keyframesString
