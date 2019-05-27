@@ -11,7 +11,7 @@ action "Install" {
 action "Build" {
   needs = "Install"
   uses = "actions/npm@master"
-  args = "build"
+  args = "run build"
 }
 
 action "Publish" {
