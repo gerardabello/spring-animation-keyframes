@@ -1,5 +1,6 @@
 {
   "name": "spring-animation-keyframes",
+  "version": "0.0.1",
   "browserslist": [
     "last 2 chrome versions",
     "last 2 firefox versions",
