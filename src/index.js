@@ -108,7 +108,7 @@ const getSpringValue = ({
   return from + f(t)
 }
 
-export const generateKeyframes = (springs, { time = 1 }) => {
+export const generateKeyframes = (springs, { time = 1 } = {}) => {
   const otherSprings = springs.filter(
     s => !transformProperties.includes(s.property)
   )
