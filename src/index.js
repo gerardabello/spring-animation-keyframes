@@ -1,5 +1,7 @@
 import Complex from './complex'
 
+// solution to: f(0) = 0; f'(0) = z; f''(t) = -x*(f(t) - d) - y*f'(t)
+
 const spring = (tension, friction, endPosition, startingVelocity) => t => {
   const lsr = Complex(friction * friction - 4 * tension).sqrt()
 
