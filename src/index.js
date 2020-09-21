@@ -88,8 +88,10 @@ export const presets = {
 }
 
 const transformProperties = [
+  'perspective',
   'translateY',
   'translateX',
+  'translateZ',
   'scale',
   'scaleX',
   'scaleY'

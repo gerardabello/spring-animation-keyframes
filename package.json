@@ -1,6 +1,6 @@
 {
   "name": "spring-animation-keyframes",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "dist/index.js",
   "browserslist": [
     "last 2 chrome versions",
@@ -18,14 +18,16 @@
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "8.0.2",
     "browserslist": "^4.1.1",
-    "eslint": "^5.16.0",
-    "eslint-config-gerard": "^0.3.0",
+    "eslint": "^7.9.0",
+    "eslint-config-gerard": "^1.2.0",
     "prop-types": "^15.7.2",
     "webpack": "4.19.1",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
+    "prettier": "^2.1.2",
+    "prettier-config-gerard": "^1.0.1"
   },
   "scripts": {
     "clean": "rm -rf dist",
