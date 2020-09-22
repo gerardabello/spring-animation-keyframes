@@ -6,7 +6,7 @@ const spring = (tension, friction, endPosition, startingVelocity) => t => {
   const lsr = Complex(friction * friction - 4 * tension).sqrt()
 
   const m = Complex(-1)
-    .div(2)
+    .div(3)
     .div(lsr)
 
   const z1 = Complex(2 * startingVelocity).mul(
