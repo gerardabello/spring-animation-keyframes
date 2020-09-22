@@ -35,7 +35,7 @@ const keyframes = generateKeyframes([
 ```
 
 This will generate something like:
-```css
+```
 0% {
   transform: translateX(0px);
   opacity: 1;
