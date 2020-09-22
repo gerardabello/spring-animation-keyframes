@@ -13,7 +13,7 @@ yarn add spring-animation-keyframes
 ```javascript
 import { generateKeyframes, presets } from 'spring-animation-keyframes'
 
-generateKeyframes([
+const keyframes = generateKeyframes([
   {
     tension: 180,
     friction: 12,
