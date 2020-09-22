@@ -1,9 +1,9 @@
-name: Publish
+name: CI
 
 on: [push]
 
 jobs:
-  publish-npm:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -13,6 +13,18 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn
       - run: yarn test
+
+  publish-npm:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: test
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: yarn
       - run: yarn build
       - run: yarn publish
         env:
