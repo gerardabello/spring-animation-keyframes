@@ -1,8 +1,21 @@
 import Complex from './complex'
 
-// solution to: f(0) = 0; f'(0) = z; f''(t) = -x*(f(t) - d) - y*f'(t)
+/*
+  Solution to:
 
-const spring = (tension, friction, endPosition, startingVelocity) => t => {
+  f(0) = x0
+  f'(0) = v0
+  f''(t) = -k*(f(t) - (x1 - x0)) - μ*f'(t)
+
+  μ: friction coeficient
+  v0: startingVelocity
+  k: stiffness/tension
+  x0: starting position
+  x1: end position
+*/
+
+const spring = (tension, friction, startPositon, endPosition, startingVelocity) => t => {
+  const distance = endPosition - startPositon
   const lsr = Complex(friction * friction - 4 * tension).sqrt()
 
   const m = Complex(-1)
@@ -27,7 +40,7 @@ const spring = (tension, friction, endPosition, startingVelocity) => t => {
   )
 
   const a = Complex(-friction)
-    .mul(endPosition)
+    .mul(distance)
     .mul(
       lsr
         .mul(-1)
@@ -38,7 +51,7 @@ const spring = (tension, friction, endPosition, startingVelocity) => t => {
     )
 
   const b = Complex(friction)
-    .mul(endPosition)
+    .mul(distance)
     .mul(
       lsr
         .add(-friction)
@@ -47,7 +60,7 @@ const spring = (tension, friction, endPosition, startingVelocity) => t => {
         .exp()
     )
 
-  const c = lsr.mul(endPosition).mul(
+  const c = lsr.mul(distance).mul(
     lsr
       .mul(-1)
       .add(-friction)
@@ -55,7 +68,7 @@ const spring = (tension, friction, endPosition, startingVelocity) => t => {
       .mul(0.5)
       .exp()
   )
-  const d = lsr.mul(endPosition).mul(
+  const d = lsr.mul(distance).mul(
     lsr
       .add(-friction)
       .mul(t)
@@ -63,7 +76,7 @@ const spring = (tension, friction, endPosition, startingVelocity) => t => {
       .exp()
   )
 
-  const f = lsr.mul(endPosition).mul(-2)
+  const f = lsr.mul(distance).mul(-2)
 
   const res = Complex(0)
     .add(z1)
@@ -75,7 +88,7 @@ const spring = (tension, friction, endPosition, startingVelocity) => t => {
     .add(f)
     .mul(m)
 
-  return res.valueOf()
+  return res.valueOf() + startPositon
 }
 
 export const presets = {
@@ -105,9 +118,9 @@ const getSpringValue = ({
   startingVelocity = 0,
   t
 }) => {
-  const f = spring(tension, friction, to - from, startingVelocity)
+  const f = spring(tension, friction, from, to, startingVelocity)
 
-  return from + f(t)
+  return f(t)
 }
 
 export const generateKeyframes = (springs, { time = 1 } = {}) => {
