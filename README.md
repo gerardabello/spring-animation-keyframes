@@ -1,5 +1,8 @@
 # Spring animation keyframes
 
+Generates a keyframe list to be used inside the css `@keyframes` rule, using physically based spring equations.
+
+Similar and inspired by react-spring, but with the objective of not relying on a Javascript runtime. That has the advantage of a much more performant animation, even when running blocking javascript. As the keyframes are pre-generated, this library does not work for dynamic animations, for example involving drag-and-drop.
 
 ## Install
 ```
