@@ -36,7 +36,7 @@ const keyframes = generateKeyframes([
   // be a value sufficiently long so that the "spring" had time to settle.
   // For non-extreme values of tension and friction, the default should be
   // enough.
-  time = 0.8 // default: 1
+  time: 0.8 // default: 1
 })
 ```
 

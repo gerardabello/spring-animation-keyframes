@@ -16,10 +16,12 @@
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
+    "babel-jest": "^26.3.0",
     "babel-loader": "8.0.2",
     "browserslist": "^4.1.1",
     "eslint": "^7.9.0",
     "eslint-config-gerard": "^1.2.0",
+    "jest": "^26.4.2",
     "prettier": "^2.1.2",
     "prettier-config-gerard": "^1.0.1",
     "prop-types": "^15.7.2",
@@ -31,7 +33,15 @@
     "clean": "rm -rf dist",
     "start": "webpack-dev-server --mode development",
     "build": "npm run clean && webpack --mode production",
-    "lint": "eslint --ext .js,.jsx . --fix"
+    "lint": "eslint --ext .js,.jsx . --fix",
+    "test": "jest"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  }
 }
