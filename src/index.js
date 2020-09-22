@@ -5,7 +5,7 @@ import Complex from './complex'
 
   f(0) = x0
   f'(0) = v0
-  f''(t) = -k*(f(t) - (x1 - x0)) - μ*f'(t)
+  f''(t) = -k*(f(t) - x1) - μ*f'(t)
 
   μ: friction coeficient
   v0: startingVelocity

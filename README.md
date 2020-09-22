@@ -113,7 +113,7 @@ All the animations produced by this library follow the following spring equation
 ```
 f(0) = x0
 f'(0) = v0
-f''(t) = -k*(f(t) - (x1 - x0)) - μ*f'(t)
+f''(t) = -k*(f(t) - x1) - μ*f'(t)
 
 f(t): position
 f'(t): velocity
