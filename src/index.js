@@ -14,82 +14,39 @@ import Complex from './complex'
   x1: end position
 */
 
-const spring = (tension, friction, startPositon, endPosition, startingVelocity) => t => {
-  const distance = endPosition - startPositon
-  const lsr = Complex(friction * friction - 4 * tension).sqrt()
+const spring =
+  (tension, friction, startPositon, endPosition, startingVelocity) => (t) => {
+    const distance = endPosition - startPositon
 
-  const m = Complex(-1)
-    .div(2)
-    .div(lsr)
+    const lsr = new Complex(friction * friction - 4 * tension).sqrt()
 
-  const z1 = Complex(2 * startingVelocity).mul(
-    lsr
-      .mul(-1)
-      .add(-friction)
-      .mul(t)
-      .mul(0.5)
-      .exp()
-  )
+    const p1 = lsr.mul(-1).add(-friction).mul(t).mul(0.5).exp()
 
-  const z2 = Complex(-2 * startingVelocity).mul(
-    lsr
-      .add(-friction)
-      .mul(t)
-      .mul(0.5)
-      .exp()
-  )
+    const m = new Complex(-1).div(2).div(lsr)
 
-  const a = Complex(-friction)
-    .mul(distance)
-    .mul(
-      lsr
-        .mul(-1)
-        .add(-friction)
-        .mul(t)
-        .mul(0.5)
-        .exp()
-    )
+    const z1 = new Complex(2 * startingVelocity).mul(p1)
+    const z2 = new Complex(-z1.re, z1.im)
 
-  const b = Complex(friction)
-    .mul(distance)
-    .mul(
-      lsr
-        .add(-friction)
-        .mul(t)
-        .mul(0.5)
-        .exp()
-    )
+    const a = new Complex(-friction).mul(distance).mul(p1)
+    const b = new Complex(-a.re, a.im)
 
-  const c = lsr.mul(distance).mul(
-    lsr
-      .mul(-1)
-      .add(-friction)
-      .mul(t)
-      .mul(0.5)
-      .exp()
-  )
-  const d = lsr.mul(distance).mul(
-    lsr
-      .add(-friction)
-      .mul(t)
-      .mul(0.5)
-      .exp()
-  )
+    const c = lsr.mul(distance).mul(p1)
+    const d = new Complex(-c.re, c.im)
 
-  const f = lsr.mul(distance).mul(-2)
+    const f = lsr.mul(distance).mul(-2)
 
-  const res = Complex(0)
-    .add(z1)
-    .add(z2)
-    .add(a)
-    .add(b)
-    .add(c)
-    .add(d)
-    .add(f)
-    .mul(m)
+    const res = new Complex(0)
+      .add(z1)
+      .add(z2)
+      .add(a)
+      .add(b)
+      .add(c)
+      .add(d)
+      .add(f)
+      .mul(m)
 
-  return res.valueOf() + startPositon
-}
+    return res.valueOf() + startPositon
+  }
 
 export const presets = {
   default: { tension: 170, friction: 26 },
@@ -97,7 +54,7 @@ export const presets = {
   wobbly: { tension: 180, friction: 12 },
   stiff: { tension: 210, friction: 20 },
   slow: { tension: 280, friction: 60 },
-  molasses: { tension: 280, friction: 120 }
+  molasses: { tension: 280, friction: 120 },
 }
 
 const transformProperties = [
@@ -107,7 +64,7 @@ const transformProperties = [
   'translateZ',
   'scale',
   'scaleX',
-  'scaleY'
+  'scaleY',
 ]
 
 const getSpringValue = ({
@@ -116,7 +73,7 @@ const getSpringValue = ({
   tension,
   friction,
   startingVelocity = 0,
-  t
+  t,
 }) => {
   const f = spring(tension, friction, from, to, startingVelocity)
 
@@ -125,10 +82,10 @@ const getSpringValue = ({
 
 export const generateKeyframes = (springs, { time = 1 } = {}) => {
   const otherSprings = springs.filter(
-    s => !transformProperties.includes(s.property)
+    (s) => !transformProperties.includes(s.property)
   )
 
-  const transformSprings = springs.filter(s =>
+  const transformSprings = springs.filter((s) =>
     transformProperties.includes(s.property)
   )
 
@@ -145,7 +102,7 @@ export const generateKeyframes = (springs, { time = 1 } = {}) => {
         const t = (i * time) / 100
         const springValue = getSpringValue({
           ...transformSprings[j],
-          t
+          t,
         })
 
         keyframesString =
@@ -161,7 +118,7 @@ export const generateKeyframes = (springs, { time = 1 } = {}) => {
       const t = (i * time) / 100
       const springValue = getSpringValue({
         ...otherSprings[j],
-        t
+        t,
       })
 
       keyframesString = keyframesString + `${property}: ${springValue}${unit};`
