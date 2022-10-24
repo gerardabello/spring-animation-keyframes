@@ -42,37 +42,31 @@ const parse = (a, b) => {
   return z
 }
 
-function Complex(a, b) {
-  if (!(this instanceof Complex)) {
-    return new Complex(a, b)
-  }
+class Complex {
+    constructor(a, b) {
+        const z = parse(a, b)
 
-  const z = parse(a, b)
+        this.re = z.re
+        this.im = z.im
+    }
 
-  this.re = z.re
-  this.im = z.im
-}
 
-Complex.prototype = {
-  re: 0,
-  im: 0,
-
-  add: function(a) {
+  add(a) {
     const z = new Complex(a)
 
     return new Complex(this.re + z.re, this.im + z.im)
-  },
+  }
 
-  mul: function(a) {
+  mul(a) {
     const z = new Complex(a)
 
     return new Complex(
       this.re * z.re - this.im * z.im,
       this.re * z.im + this.im * z.re
     )
-  },
+  }
 
-  div: function(n) {
+  div(n) {
     const z = new Complex(n)
 
     const a = this.re
@@ -99,9 +93,9 @@ Complex.prototype = {
     t = d * x + c
 
     return new Complex((a + b * x) / t, (b - a * x) / t)
-  },
+  }
 
-  sqrt: function() {
+  sqrt() {
     const a = this.re
     const b = this.im
     const r = this.abs()
@@ -126,38 +120,38 @@ Complex.prototype = {
     }
 
     return new Complex(re, b < 0 ? -im : im)
-  },
+  }
 
-  exp: function() {
+  exp() {
     const tmp = Math.exp(this.re)
 
     return new Complex(tmp * Math.cos(this.im), tmp * Math.sin(this.im))
-  },
+  }
 
-  abs: function() {
+  abs() {
     return hypot(this.re, this.im)
-  },
+  }
 
-  valueOf: function() {
+  valueOf() {
     if (this.im === 0) {
       return this.re
     }
     return null
-  },
+  }
 
-  isZero: function() {
+  isZero() {
     return this.re === 0 && this.im === 0
-  },
+  }
 
-  isInfinite: function() {
+  isInfinite() {
     return !(this.isNaN() || this.isFinite())
-  },
+  }
 
-  isNaN: function() {
+  isNaN() {
     return isNaN(this.re) || isNaN(this.im)
-  },
+  }
 
-  isFinite: function() {
+  isFinite() {
     return isFinite(this.re) && isFinite(this.im)
   }
 }
