@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}
