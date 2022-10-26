@@ -1,6 +1,27 @@
-import { generateKeyframes, presets } from '.'
+import { generateKeyframes, presets, Spring } from '.'
 
-const cases = [
+const cases: [Spring[], { time?: number }][] = [
+  [
+    [
+      {
+        tension: 280,
+        friction: 60,
+        from: 30,
+        to: 0,
+        unit: "px",
+        property: "translateY",
+      },
+      {
+        tension: 280,
+        friction: 100,
+        from: 0,
+        to: 1,
+        unit: "",
+        property: "opacity",
+      },
+    ],
+    { time: 2 }
+  ],
   [
     [
       {
@@ -73,7 +94,7 @@ const cases = [
   ],
 ]
 
-test.each(cases)('test case %#', (springs, options) => {
+test.each(cases)('test case %#', (springs: Spring[], options: { time?: number }) => {
   const keyframes = generateKeyframes(
     springs, options
   )
