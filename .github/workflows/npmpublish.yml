@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm
+      - run: npm ci
       - run: npm run test
 
   publish-npm:
@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm
+      - run: npm ci
       - run: npm run build
       - run: npm publish
         env:
