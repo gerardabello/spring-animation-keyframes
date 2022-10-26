@@ -1,6 +1,6 @@
 {
   "name": "spring-animation-keyframes",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "main": "dist/index.js",
   "devDependencies": {
     "@types/jest": "^29.2.0",
