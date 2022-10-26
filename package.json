@@ -1,47 +1,20 @@
 {
   "name": "spring-animation-keyframes",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "main": "dist/index.js",
-  "browserslist": [
-    "last 2 chrome versions",
-    "last 2 firefox versions",
-    "last 2 edge versions",
-    "last 2 safari versions",
-    "last 2 and_chr versions",
-    "last 2 ios_saf versions",
-    "> 1%",
-    "not dead",
-    "not ie 11"
-  ],
   "devDependencies": {
-    "@babel/core": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "babel-jest": "^26.3.0",
-    "babel-loader": "8.0.2",
-    "browserslist": "^4.1.1",
-    "eslint": "^7.9.0",
-    "eslint-config-gerard": "^1.2.0",
-    "jest": "^26.4.2",
-    "prettier": "^2.1.2",
-    "prettier-config-gerard": "^1.0.1",
-    "prop-types": "^15.7.2",
-    "webpack": "4.19.1",
-    "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.5"
+    "@types/jest": "^29.2.0",
+    "eslint": "latest",
+    "jest": "^29",
+    "prettier": "latest",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.8.4"
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "start": "webpack-dev-server --mode development",
-    "build": "npm run clean && webpack --mode production",
+    "build": "npm run clean && tsc",
     "lint": "eslint --ext .js,.jsx . --fix",
     "test": "jest"
   },
-  "license": "MIT",
-  "dependencies": {
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    }
-  }
+  "license": "MIT"
 }

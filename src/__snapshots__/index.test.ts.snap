@@ -2,6 +2,414 @@
 
 exports[`test case 0 1`] = `
 "0% {
+ transform: translateY(30px) ;
+opacity: 0;
+}
+1% {
+ transform: translateY(28.840489772353166px) ;
+opacity: 0.03153677949484876;
+}
+2% {
+ transform: translateY(26.62730685834171px) ;
+opacity: 0.08228945585396176;
+}
+3% {
+ transform: translateY(24.23980063617587px) ;
+opacity: 0.13320667629501706;
+}
+4% {
+ transform: translateY(21.9540924692746px) ;
+opacity: 0.1817022227486149;
+}
+5% {
+ transform: translateY(19.846769361221863px) ;
+opacity: 0.22754232501734242;
+}
+6% {
+ transform: translateY(17.929369945016468px) ;
+opacity: 0.2708228026867782;
+}
+7% {
+ transform: translateY(16.193094925376926px) ;
+opacity: 0.31167948128705414;
+}
+8% {
+ transform: translateY(14.623588034402582px) ;
+opacity: 0.35024708116269954;
+}
+9% {
+ transform: translateY(13.20574711397881px) ;
+opacity: 0.3866537067332831;
+}
+10% {
+ transform: translateY(11.925221392428703px) ;
+opacity: 0.42102041824942854;
+}
+11% {
+ transform: translateY(10.768813893878065px) ;
+opacity: 0.4534615119447852;
+}
+12% {
+ transform: translateY(9.724528072432623px) ;
+opacity: 0.4840848826121347;
+}
+13% {
+ transform: translateY(8.781504274986613px) ;
+opacity: 0.5129923799313341;
+}
+14% {
+ transform: translateY(7.929927127426776px) ;
+opacity: 0.5402801468485101;
+}
+15% {
+ transform: translateY(7.160930148710598px) ;
+opacity: 0.566038939284511;
+}
+16% {
+ transform: translateY(6.4665056947364725px) ;
+opacity: 0.5903544279710686;
+}
+17% {
+ transform: translateY(5.839422327794942px) ;
+opacity: 0.6133074833805727;
+}
+18% {
+ transform: translateY(5.2731497629293855px) ;
+opacity: 0.6349744446916539;
+}
+19% {
+ transform: translateY(4.761790947093743px) ;
+opacity: 0.6554273736843442;
+}
+20% {
+ transform: translateY(4.300020676354503px) ;
+opacity: 0.6747342944091296;
+}
+21% {
+ transform: translateY(3.883030149450562px) ;
+opacity: 0.6929594194269869;
+}
+22% {
+ transform: translateY(3.5064768928229455px) ;
+opacity: 0.7101633633728553;
+}
+23% {
+ transform: translateY(3.166439539818228px) ;
+opacity: 0.7264033445528242;
+}
+24% {
+ transform: translateY(2.8593769945364045px) ;
+opacity: 0.7417333752455293;
+}
+25% {
+ transform: translateY(2.5820915555265564px) ;
+opacity: 0.7562044413406768;
+}
+26% {
+ transform: translateY(2.3316956154612534px) ;
+opacity: 0.7698646719121509;
+}
+27% {
+ transform: translateY(2.105581590056918px) ;
+opacity: 0.7827594992896869;
+}
+28% {
+ transform: translateY(1.9013947631019015px) ;
+opacity: 0.7949318101614866;
+}
+29% {
+ transform: translateY(1.717008764810359px) ;
+opacity: 0.806422088210331;
+}
+30% {
+ transform: translateY(1.550503428139244px) ;
+opacity: 0.8172685487575737;
+}
+31% {
+ transform: translateY(1.4001447924682289px) ;
+opacity: 0.8275072658628339;
+}
+32% {
+ transform: translateY(1.264367046404125px) ;
+opacity: 0.8371722923020987;
+}
+33% {
+ transform: translateY(1.1417562216651724px) ;
+opacity: 0.8462957728232762;
+}
+34% {
+ transform: translateY(1.0310354682357463px) ;
+opacity: 0.8549080510558683;
+}
+35% {
+ transform: translateY(0.9310517574493709px) ;
+opacity: 0.8630377704303339;
+}
+36% {
+ transform: translateY(0.8407638745278803px) ;
+opacity: 0.8707119694427912;
+}
+37% {
+ transform: translateY(0.759231575533093px) ;
+opacity: 0.8779561715818925;
+}
+38% {
+ transform: translateY(0.6856057958129362px) ;
+opacity: 0.884794470216965;
+}
+39% {
+ transform: translateY(0.6191198079745952px) ;
+opacity: 0.8912496087297391;
+}
+40% {
+ transform: translateY(0.5590812373048806px) ;
+opacity: 0.8973430561561778;
+}
+41% {
+ transform: translateY(0.5048648514879766px) ;
+opacity: 0.9030950785899788;
+}
+42% {
+ transform: translateY(0.4559060495335139px) ;
+opacity: 0.9085248065852343;
+}
+43% {
+ transform: translateY(0.41169498210988564px) ;
+opacity: 0.913650298782416;
+}
+44% {
+ transform: translateY(0.37177124205280165px) ;
+opacity: 0.9184886019693022;
+}
+45% {
+ transform: translateY(0.3357190697568271px) ;
+opacity: 0.9230558077766011;
+}
+46% {
+ transform: translateY(0.30316302351965874px) ;
+opacity: 0.9273671061968328;
+}
+47% {
+ transform: translateY(0.27376406975080414px) ;
+opacity: 0.9314368361044688;
+}
+48% {
+ transform: translateY(0.24721605232856803px) ;
+opacity: 0.9352785329453515;
+}
+49% {
+ transform: translateY(0.22324250433795712px) ;
+opacity: 0.9389049737540046;
+}
+50% {
+ transform: translateY(0.20159376898732262px) ;
+opacity: 0.9423282196485567;
+}
+51% {
+ transform: translateY(0.18204439972144115px) ;
+opacity: 0.9455596559446092;
+}
+52% {
+ transform: translateY(0.16439081245622944px) ;
+opacity: 0.9486100300214653;
+}
+53% {
+ transform: translateY(0.14844916548583953px) ;
+opacity: 0.9514894870666565;
+}
+54% {
+ transform: translateY(0.13405344498379534px) ;
+opacity: 0.9542076038176509;
+}
+55% {
+ transform: translateY(0.12105373616086723px) ;
+opacity: 0.9567734204129618;
+}
+56% {
+ transform: translateY(0.10931466207583185px) ;
+opacity: 0.9591954704585914;
+}
+57% {
+ transform: translateY(0.09871397384111802px) ;
+opacity: 0.9614818094098071;
+}
+58% {
+ transform: translateY(0.08914127754193402px) ;
+opacity: 0.9636400413626429;
+}
+59% {
+ transform: translateY(0.08049688461127147px) ;
+opacity: 0.9656773443442351;
+}
+60% {
+ transform: translateY(0.07269077368867727px) ;
+opacity: 0.9676004941861001;
+}
+61% {
+ transform: translateY(0.06564165315186088px) ;
+opacity: 0.9694158870597585;
+}
+62% {
+ transform: translateY(0.0592761145584042px) ;
+opacity: 0.9711295607496534;
+}
+63% {
+ transform: translateY(0.05352786818169264px) ;
+opacity: 0.9727472147341156;
+}
+64% {
+ transform: translateY(0.0483370526800222px) ;
+opacity: 0.9742742291411627;
+}
+65% {
+ transform: translateY(0.04364961170993453px) ;
+opacity: 0.9757156826421746;
+}
+66% {
+ transform: translateY(0.03941673099186005px) ;
+opacity: 0.9770763693429619;
+}
+67% {
+ transform: translateY(0.03559432996585343px) ;
+opacity: 0.9783608147284008;
+}
+68% {
+ transform: translateY(0.03214260274348035px) ;
+opacity: 0.9795732907136666;
+}
+69% {
+ transform: translateY(0.029025603575526304px) ;
+opacity: 0.9807178298521243;
+}
+70% {
+ transform: translateY(0.02621087251853993px) ;
+opacity: 0.98179823874713;
+}
+71% {
+ transform: translateY(0.023669097402073902px) ;
+opacity: 0.9828181107123471;
+}
+72% {
+ transform: translateY(0.02137380857629978px) ;
+opacity: 0.9837808377226898;
+}
+73% {
+ transform: translateY(0.019301103261170738px) ;
+opacity: 0.9846896216956326;
+}
+74% {
+ transform: translateY(0.017429396626649662px) ;
+opacity: 0.985547485140415;
+}
+75% {
+ transform: translateY(0.015739197011612305px) ;
+opacity: 0.9863572812105537;
+}
+76% {
+ transform: translateY(0.014212902940748506px) ;
+opacity: 0.987121703193097;
+}
+77% {
+ transform: translateY(0.012834619825529359px) ;
+opacity: 0.9878432934661832;
+}
+78% {
+ transform: translateY(0.011589994440445395px) ;
+opacity: 0.9885244519546926;
+}
+79% {
+ transform: translateY(0.0104660654507569px) ;
+opacity: 0.9891674441121173;
+}
+80% {
+ transform: translateY(0.00945112843516327px) ;
+opacity: 0.9897744084551948;
+}
+81% {
+ transform: translateY(0.008534613997806417px) ;
+opacity: 0.9903473636763641;
+}
+82% {
+ transform: translateY(0.007706977700202344px) ;
+opacity: 0.9908882153577014;
+}
+83% {
+ transform: translateY(0.006959600666963439px) ;
+opacity: 0.9913987623086628;
+}
+84% {
+ transform: translateY(0.0062846998301751px) ;
+opacity: 0.991880702548714;
+}
+85% {
+ transform: translateY(0.005675246877718365px) ;
+opacity: 0.9923356389547457;
+}
+86% {
+ transform: translateY(0.005124895061566548px) ;
+opacity: 0.9927650845920531;
+}
+87% {
+ transform: translateY(0.004627913103686154px) ;
+opacity: 0.9931704677466159;
+}
+88% {
+ transform: translateY(0.0041791255114489445px) ;
+opacity: 0.9935531366754083;
+}
+89% {
+ transform: translateY(0.003773858680823139px) ;
+opacity: 0.9939143640905467;
+}
+90% {
+ transform: translateY(0.0034078922262068545px) ;
+opacity: 0.994255351392179;
+}
+91% {
+ transform: translateY(0.0030774150299954783px) ;
+opacity: 0.9945772326642025;
+}
+92% {
+ transform: translateY(0.002778985554183322px) ;
+opacity: 0.9948810784460935;
+}
+93% {
+ transform: translateY(0.002509496000730138px) ;
+opacity: 0.9951678992933978;
+}
+94% {
+ transform: translateY(0.002266139947433743px) ;
+opacity: 0.995438649138718;
+}
+95% {
+ transform: translateY(0.002046383122298323px) ;
+opacity: 0.9956942284643839;
+}
+96% {
+ transform: translateY(0.001847937011991263px) ;
+opacity: 0.9959354872973507;
+}
+97% {
+ transform: translateY(0.0016687350296642478px) ;
+opacity: 0.9961632280362887;
+}
+98% {
+ transform: translateY(0.001506910993803956px) ;
+opacity: 0.9963782081202683;
+}
+99% {
+ transform: translateY(0.001360779694127956px) ;
+opacity: 0.9965811425479137;
+}
+100% {
+ transform: translateY(0.0012288193420637583px) ;
+opacity: 0.9967727062554043;
+}
+"
+`;
+
+exports[`test case 1 1`] = `
+"0% {
  transform: translateX(0px) ;
 opacity: 1;
 }
@@ -408,7 +816,7 @@ opacity: 0.0001034525159753219;
 "
 `;
 
-exports[`test case 1 1`] = `
+exports[`test case 2 1`] = `
 "0% {
  transform: translateX(0px) translateY(-100%) ;
 opacity: 1;
@@ -816,7 +1224,7 @@ opacity: 0.00002594728214766473;
 "
 `;
 
-exports[`test case 2 1`] = `
+exports[`test case 3 1`] = `
 "0% {
  transform: translateZ(0px) perspective(100px) ;
 }
