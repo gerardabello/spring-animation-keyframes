@@ -1,161 +1,160 @@
 const hypot = (x: number, y: number) => {
-  let a = Math.abs(x)
-  let b = Math.abs(y)
+  let a = Math.abs(x);
+  let b = Math.abs(y);
 
   if (a < 3000 && b < 3000) {
-    return Math.sqrt(a * a + b * b)
+    return Math.sqrt(a * a + b * b);
   }
 
   if (a < b) {
-    a = b
-    b = x / y
+    a = b;
+    b = x / y;
   } else {
-    b = y / x
+    b = y / x;
   }
-  return a * Math.sqrt(1 + b * b)
-}
+  return a * Math.sqrt(1 + b * b);
+};
 
 const parse = (a: number | Complex, b?: number) => {
-  const z = { re: 0, im: 0 }
+  const z = { re: 0, im: 0 };
 
   if (a == null) {
-    z.re = z.im = 0
-  } else if (b != null && typeof a === 'number') {
-    z.re = a
-    z.im = b
+    z.re = z.im = 0;
+  } else if (b != null && typeof a === "number") {
+    z.re = a;
+    z.im = b;
   } else {
     switch (typeof a) {
-      case 'object':
-        z.im = a.im
-        z.re = a.re
-        break
-      case 'number':
-        z.im = 0
-        z.re = a
-        break
+      case "object":
+        z.im = a.im;
+        z.re = a.re;
+        break;
+      case "number":
+        z.im = 0;
+        z.re = a;
+        break;
 
       default:
-        throw Error('Wrong params in Complex constructor')
+        throw Error("Wrong params in Complex constructor");
     }
   }
 
-  return z
-}
+  return z;
+};
 
 class Complex {
   re: number;
   im: number;
 
   constructor(a: number | Complex, b?: number) {
-    const z = parse(a, b)
+    const z = parse(a, b);
 
-    this.re = z.re
-    this.im = z.im
+    this.re = z.re;
+    this.im = z.im;
   }
 
-
   add(a: number | Complex) {
-    const z = new Complex(a)
+    const z = new Complex(a);
 
-    return new Complex(this.re + z.re, this.im + z.im)
+    return new Complex(this.re + z.re, this.im + z.im);
   }
 
   mul(a: number | Complex) {
-    const z = new Complex(a)
+    const z = new Complex(a);
 
     return new Complex(
       this.re * z.re - this.im * z.im,
       this.re * z.im + this.im * z.re
-    )
+    );
   }
 
   div(n: number | Complex) {
-    const z = new Complex(n)
+    const z = new Complex(n);
 
-    const a = this.re
-    const b = this.im
+    const a = this.re;
+    const b = this.im;
 
-    const c = z.re
-    const d = z.im
-    let t
-    let x
+    const c = z.re;
+    const d = z.im;
+    let t;
+    let x;
 
     if (d === 0) {
       // Divisor is real
-      return new Complex(a / c, b / c)
+      return new Complex(a / c, b / c);
     }
 
     if (Math.abs(c) < Math.abs(d)) {
-      x = c / d
-      t = c * x + d
+      x = c / d;
+      t = c * x + d;
 
-      return new Complex((a * x + b) / t, (b * x - a) / t)
+      return new Complex((a * x + b) / t, (b * x - a) / t);
     }
 
-    x = d / c
-    t = d * x + c
+    x = d / c;
+    t = d * x + c;
 
-    return new Complex((a + b * x) / t, (b - a * x) / t)
+    return new Complex((a + b * x) / t, (b - a * x) / t);
   }
 
   sqrt() {
-    const a = this.re
-    const b = this.im
-    const r = this.abs()
+    const a = this.re;
+    const b = this.im;
+    const r = this.abs();
 
-    let re
-    let im
+    let re;
+    let im;
 
     if (a >= 0) {
       if (b === 0) {
-        return new Complex(Math.sqrt(a), 0)
+        return new Complex(Math.sqrt(a), 0);
       }
 
-      re = 0.5 * Math.sqrt(2.0 * (r + a))
+      re = 0.5 * Math.sqrt(2.0 * (r + a));
     } else {
-      re = Math.abs(b) / Math.sqrt(2 * (r - a))
+      re = Math.abs(b) / Math.sqrt(2 * (r - a));
     }
 
     if (a <= 0) {
-      im = 0.5 * Math.sqrt(2.0 * (r - a))
+      im = 0.5 * Math.sqrt(2.0 * (r - a));
     } else {
-      im = Math.abs(b) / Math.sqrt(2 * (r + a))
+      im = Math.abs(b) / Math.sqrt(2 * (r + a));
     }
 
-    return new Complex(re, b < 0 ? -im : im)
+    return new Complex(re, b < 0 ? -im : im);
   }
 
   exp() {
-    const tmp = Math.exp(this.re)
+    const tmp = Math.exp(this.re);
 
-    return new Complex(tmp * Math.cos(this.im), tmp * Math.sin(this.im))
+    return new Complex(tmp * Math.cos(this.im), tmp * Math.sin(this.im));
   }
 
   abs() {
-    return hypot(this.re, this.im)
+    return hypot(this.re, this.im);
   }
 
   valueOf() {
     if (this.im === 0) {
-      return this.re
+      return this.re;
     }
-    return null
+    return null;
   }
 
   isZero() {
-    return this.re === 0 && this.im === 0
+    return this.re === 0 && this.im === 0;
   }
 
   isInfinite() {
-    return !(this.isNaN() || this.isFinite())
+    return !(this.isNaN() || this.isFinite());
   }
 
   isNaN() {
-    return isNaN(this.re) || isNaN(this.im)
+    return isNaN(this.re) || isNaN(this.im);
   }
 
   isFinite() {
-    return isFinite(this.re) && isFinite(this.im)
+    return isFinite(this.re) && isFinite(this.im);
   }
 }
 
@@ -174,78 +173,40 @@ class Complex {
 */
 
 const spring = (
-
   tension: number,
   friction: number,
   startPositon: number,
   endPosition: number,
   startingVelocity: number
-
 ) => {
+  const distance = endPosition - startPositon;
+  const lsr = new Complex(friction * friction - 4 * tension).sqrt();
 
-  const distance = endPosition - startPositon
-  const lsr = new Complex(friction * friction - 4 * tension).sqrt()
-
-  const m = new Complex(-1)
-    .div(2)
-    .div(lsr)
+  const m = new Complex(-1).div(2).div(lsr);
 
   return (t: number) => {
     const z1 = new Complex(2 * startingVelocity).mul(
-      lsr
-        .mul(-1)
-        .add(-friction)
-        .mul(t)
-        .mul(0.5)
-        .exp()
-    )
+      lsr.mul(-1).add(-friction).mul(t).mul(0.5).exp()
+    );
 
     const z2 = new Complex(-2 * startingVelocity).mul(
-      lsr
-        .add(-friction)
-        .mul(t)
-        .mul(0.5)
-        .exp()
-    )
+      lsr.add(-friction).mul(t).mul(0.5).exp()
+    );
 
     const a = new Complex(-friction)
       .mul(distance)
-      .mul(
-        lsr
-          .mul(-1)
-          .add(-friction)
-          .mul(t)
-          .mul(0.5)
-          .exp()
-      )
+      .mul(lsr.mul(-1).add(-friction).mul(t).mul(0.5).exp());
 
     const b = new Complex(friction)
       .mul(distance)
-      .mul(
-        lsr
-          .add(-friction)
-          .mul(t)
-          .mul(0.5)
-          .exp()
-      )
+      .mul(lsr.add(-friction).mul(t).mul(0.5).exp());
 
-    const c = lsr.mul(distance).mul(
-      lsr
-        .mul(-1)
-        .add(-friction)
-        .mul(t)
-        .mul(0.5)
-        .exp()
-    )
-    const d = lsr.mul(distance).mul(
-      lsr
-        .add(-friction)
-        .mul(t)
-        .mul(0.5)
-        .exp()
-    )
+    const c = lsr
+      .mul(distance)
+      .mul(lsr.mul(-1).add(-friction).mul(t).mul(0.5).exp());
+    const d = lsr.mul(distance).mul(lsr.add(-friction).mul(t).mul(0.5).exp());
 
-    const f = lsr.mul(distance).mul(-2)
+    const f = lsr.mul(distance).mul(-2);
 
     const res = new Complex(0)
       .add(z1)
@@ -255,11 +216,11 @@ const spring = (
       .add(c)
       .add(d)
       .add(f)
-      .mul(m)
+      .mul(m);
 
-    return (res.valueOf() ?? 0) + startPositon
-  }
-}
+    return (res.valueOf() ?? 0) + startPositon;
+  };
+};
 
 export const presets = {
   default: { tension: 170, friction: 26 },
@@ -268,17 +229,32 @@ export const presets = {
   stiff: { tension: 210, friction: 20 },
   slow: { tension: 280, friction: 60 },
   molasses: { tension: 280, friction: 120 },
-}
+};
 
 const transformProperties = [
-  'perspective',
-  'translateY',
-  'translateX',
-  'translateZ',
-  'scale',
-  'scaleX',
-  'scaleY',
-]
+  "perspective",
+  "translateY",
+  "translateX",
+  "translateZ",
+  "scale",
+  "scaleX",
+  "scaleY",
+  "rotate",
+  "rotateX",
+  "rotateY",
+  "rotateZ",
+];
+
+const filterProperties = [
+  "grayscale",
+  "blur",
+  "brightness",
+  "contrast",
+  "hue-rotate",
+  "invert",
+  "saturate",
+  "sepia",
+];
 
 const getSpringFunction = ({
   from,
@@ -287,60 +263,85 @@ const getSpringFunction = ({
   friction,
   startingVelocity = 0,
 }: Spring) => {
-  return spring(tension, friction, from, to, startingVelocity)
-}
+  return spring(tension, friction, from, to, startingVelocity);
+};
 
 export type Spring = {
-  property: string,
-  unit?: string,
-  from: number, to: number, friction: number, tension: number, startingVelocity?: number
-}
+  property: string;
+  unit?: string;
+  from: number;
+  to: number;
+  friction: number;
+  tension: number;
+  startingVelocity?: number;
+};
 
 export const generateKeyframes = (springs: Spring[], { time = 1 } = {}) => {
   const otherSprings = springs
     .filter((s) => !transformProperties.includes(s.property))
-    .map((o) => ({ ...o, f: getSpringFunction({ ...o }) }))
+    .filter((s) => !filterProperties.includes(s.property))
+    .map((o) => ({ ...o, f: getSpringFunction({ ...o }) }));
 
   const transformSprings = springs
     .filter((s) => transformProperties.includes(s.property))
-    .map((o) => ({ ...o, f: getSpringFunction({ ...o }) }))
+    .map((o) => ({ ...o, f: getSpringFunction({ ...o }) }));
 
-  let keyframesString = ''
+  const filterSprings = springs
+    .filter((s) => filterProperties.includes(s.property))
+    .map((o) => ({ ...o, f: getSpringFunction({ ...o }) }));
+
+  let keyframesString = "";
   for (let i = 0; i <= 100; i++) {
-    keyframesString = keyframesString + `${i}% {`
-    keyframesString = keyframesString + '\n'
+    keyframesString = keyframesString + `${i}% {`;
+    keyframesString = keyframesString + "\n";
 
     if (transformSprings.length > 0) {
-      keyframesString = keyframesString + ` transform: `
+      keyframesString = keyframesString + ` transform: `;
       for (let j = 0; j < transformSprings.length; j++) {
-        const { property, unit = '' } = transformSprings[j]
+        const { property, unit = "" } = transformSprings[j];
 
-        const t = (i * time) / 100
-        const { f } = transformSprings[j]
-        const springValue = f(t)
+        const t = (i * time) / 100;
+        const { f } = transformSprings[j];
+        const springValue = f(t);
 
         keyframesString =
-          keyframesString + `${property}(${springValue}${unit}) `
+          keyframesString + `${property}(${springValue}${unit}) `;
       }
 
-      keyframesString = keyframesString + ';\n'
+      keyframesString = keyframesString + ";\n";
+    }
+
+    if (filterSprings.length > 0) {
+      keyframesString = keyframesString + ` filter: `;
+      for (let j = 0; j < filterSprings.length; j++) {
+        const { property, unit = "" } = filterSprings[j];
+
+        const t = (i * time) / 100;
+        const { f } = filterSprings[j];
+        const springValue = f(t);
+
+        keyframesString =
+          keyframesString + `${property}(${springValue}${unit}) `;
+      }
+
+      keyframesString = keyframesString + ";\n";
     }
 
     for (let j = 0; j < otherSprings.length; j++) {
-      const { property, unit = '' } = otherSprings[j]
+      const { property, unit = "" } = otherSprings[j];
 
-      const t = (i * time) / 100
+      const t = (i * time) / 100;
 
-      const { f } = otherSprings[j]
-      const springValue = f(t)
+      const { f } = otherSprings[j];
+      const springValue = f(t);
 
-      keyframesString = keyframesString + `${property}: ${springValue}${unit};`
-      keyframesString = keyframesString + '\n'
+      keyframesString = keyframesString + `${property}: ${springValue}${unit};`;
+      keyframesString = keyframesString + "\n";
     }
 
-    keyframesString = keyframesString + `}`
-    keyframesString = keyframesString + '\n'
+    keyframesString = keyframesString + `}`;
+    keyframesString = keyframesString + "\n";
   }
 
-  return keyframesString
-}
+  return keyframesString;
+};

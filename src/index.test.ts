@@ -92,6 +92,18 @@ const cases: [Spring[], { time?: number }][] = [
     ],
     {},
   ],
+  [
+    [
+      {
+        tension: 180,
+        friction: 12,
+        from: 1,
+        to: 0,
+        property: 'grayscale',
+      },
+    ],
+    {},
+  ],
 ]
 
 test.each(cases)('test case %#', (springs: Spring[], options: { time?: number }) => {

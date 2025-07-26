@@ -1530,3 +1530,310 @@ exports[`test case 3 1`] = `
 }
 "
 `;
+
+exports[`test case 4 1`] = `
+"0% {
+ filter: grayscale(1) ;
+}
+1% {
+ filter: grayscale(0.9913623174142255) ;
+}
+2% {
+ filter: grayscale(0.9669111594755062) ;
+}
+3% {
+ filter: grayscale(0.9288488244238208) ;
+}
+4% {
+ filter: grayscale(0.8793591014533974) ;
+}
+5% {
+ filter: grayscale(0.8205723779335565) ;
+}
+6% {
+ filter: grayscale(0.754535596730477) ;
+}
+7% {
+ filter: grayscale(0.6831870240008099) ;
+}
+8% {
+ filter: grayscale(0.6083357108366673) ;
+}
+9% {
+ filter: grayscale(0.5316454658314382) ;
+}
+10% {
+ filter: grayscale(0.45462309992232786) ;
+}
+11% {
+ filter: grayscale(0.3786106594938018) ;
+}
+12% {
+ filter: grayscale(0.3047813282952839) ;
+}
+13% {
+ filter: grayscale(0.23413865271241607) ;
+}
+14% {
+ filter: grayscale(0.16751872770971477) ;
+}
+15% {
+ filter: grayscale(0.10559497163094844) ;
+}
+16% {
+ filter: grayscale(0.04888511624186742) ;
+}
+17% {
+ filter: grayscale(-0.002239956870299986) ;
+}
+18% {
+ filter: grayscale(-0.04754589198359782) ;
+}
+19% {
+ filter: grayscale(-0.08692339012484007) ;
+}
+20% {
+ filter: grayscale(-0.12037591885054932) ;
+}
+21% {
+ filter: grayscale(-0.14800690192870825) ;
+}
+22% {
+ filter: grayscale(-0.17000666469603498) ;
+}
+23% {
+ filter: grayscale(-0.18663938381901124) ;
+}
+24% {
+ filter: grayscale(-0.19823026198623173) ;
+}
+25% {
+ filter: grayscale(-0.20515311931292812) ;
+}
+26% {
+ filter: grayscale(-0.2078185644943744) ;
+}
+27% {
+ filter: grayscale(-0.2066628804898356) ;
+}
+28% {
+ filter: grayscale(-0.20213773217602005) ;
+}
+29% {
+ filter: grayscale(-0.19470077733853786) ;
+}
+30% {
+ filter: grayscale(-0.18480723786936637) ;
+}
+31% {
+ filter: grayscale(-0.1729024653451705) ;
+}
+32% {
+ filter: grayscale(-0.15941551445550095) ;
+}
+33% {
+ filter: grayscale(-0.14475371915736668) ;
+}
+34% {
+ filter: grayscale(-0.12929825002934692) ;
+}
+35% {
+ filter: grayscale(-0.11340061711455629) ;
+}
+36% {
+ filter: grayscale(-0.0973800705666461) ;
+}
+37% {
+ filter: grayscale(-0.08152184159965392) ;
+}
+38% {
+ filter: grayscale(-0.06607615851268767) ;
+}
+39% {
+ filter: grayscale(-0.05125796680943151) ;
+}
+40% {
+ filter: grayscale(-0.037247278533936834) ;
+}
+41% {
+ filter: grayscale(-0.024190073754666752) ;
+}
+42% {
+ filter: grayscale(-0.01219967649211151) ;
+}
+43% {
+ filter: grayscale(-0.0013585281366932378) ;
+}
+44% {
+ filter: grayscale(0.008279716626590328) ;
+}
+45% {
+ filter: grayscale(0.016687843353356158) ;
+}
+46% {
+ filter: grayscale(0.023862548906762426) ;
+}
+47% {
+ filter: grayscale(0.029821793520915296) ;
+}
+48% {
+ filter: grayscale(0.03460209216443022) ;
+}
+49% {
+ filter: grayscale(0.03825579794291767) ;
+}
+50% {
+ filter: grayscale(0.040848424450318) ;
+}
+51% {
+ filter: grayscale(0.042456048014795744) ;
+}
+52% {
+ filter: grayscale(0.04316282480164968) ;
+}
+53% {
+ filter: grayscale(0.04305865183687474) ;
+}
+54% {
+ filter: grayscale(0.042236995290996115) ;
+}
+55% {
+ filter: grayscale(0.04079290389075785) ;
+}
+56% {
+ filter: grayscale(0.038821220170365045) ;
+}
+57% {
+ filter: grayscale(0.03641499748583665) ;
+}
+58% {
+ filter: grayscale(0.03366412633512483) ;
+}
+59% {
+ filter: grayscale(0.030654169581140756) ;
+}
+60% {
+ filter: grayscale(0.0274654026822998) ;
+}
+61% {
+ filter: grayscale(0.02417205200357131) ;
+}
+62% {
+ filter: grayscale(0.020841721709532024) ;
+}
+63% {
+ filter: grayscale(0.017534997621086124) ;
+}
+64% {
+ filter: grayscale(0.014305214734162242) ;
+}
+65% {
+ filter: grayscale(0.01119837383098532) ;
+}
+66% {
+ filter: grayscale(0.008253191736915855) ;
+}
+67% {
+ filter: grayscale(0.005501269259096997) ;
+}
+68% {
+ filter: grayscale(0.0029673606552074183) ;
+}
+69% {
+ filter: grayscale(0.0006697285874784908) ;
+}
+70% {
+ filter: grayscale(-0.0013794311163419781) ;
+}
+71% {
+ filter: grayscale(-0.0031735099827916446) ;
+}
+72% {
+ filter: grayscale(-0.0047109670016061145) ;
+}
+73% {
+ filter: grayscale(-0.005994781698534624) ;
+}
+74% {
+ filter: grayscale(-0.007031892492325831) ;
+}
+75% {
+ filter: grayscale(-0.00783263151221636) ;
+}
+76% {
+ filter: grayscale(-0.008410165848391049) ;
+}
+77% {
+ filter: grayscale(-0.008779953971243426) ;
+}
+78% {
+ filter: grayscale(-0.008959224810517474) ;
+}
+79% {
+ filter: grayscale(-0.008966485754547282) ;
+}
+80% {
+ filter: grayscale(-0.008821064632094977) ;
+}
+81% {
+ filter: grayscale(-0.008542689591283015) ;
+}
+82% {
+ filter: grayscale(-0.008151109705619941) ;
+}
+83% {
+ filter: grayscale(-0.0076657581273280595) ;
+}
+84% {
+ filter: grayscale(-0.007105458681749166) ;
+}
+85% {
+ filter: grayscale(-0.006488175959801223) ;
+}
+86% {
+ filter: grayscale(-0.005830808222304862) ;
+}
+87% {
+ filter: grayscale(-0.0051490217825120865) ;
+}
+88% {
+ filter: grayscale(-0.004457124981481098) ;
+}
+89% {
+ filter: grayscale(-0.003767979413576761) ;
+}
+90% {
+ filter: grayscale(-0.0030929456933941335) ;
+}
+91% {
+ filter: grayscale(-0.0024418607766996114) ;
+}
+92% {
+ filter: grayscale(-0.0018230436513770876) ;
+}
+93% {
+ filter: grayscale(-0.0012433260939270774) ;
+}
+94% {
+ filter: grayscale(-0.000708105136209225) ;
+}
+95% {
+ filter: grayscale(-0.00022141389884033913) ;
+}
+96% {
+ filter: grayscale(0.00021399248531828174) ;
+}
+97% {
+ filter: grayscale(0.0005965390192068654) ;
+}
+98% {
+ filter: grayscale(0.0009257240672837508) ;
+}
+99% {
+ filter: grayscale(0.0012020064762305882) ;
+}
+100% {
+ filter: grayscale(0.0014266891927798842) ;
+}
+"
+`;
